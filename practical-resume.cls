@@ -390,13 +390,13 @@
     \ifthenelse{\equal{#6}{}}{
         \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
             {\large #3} & {\large #4}\\[0.2em]
-            {\normalsize\itshape #2} & {\footnotesize #5}\\
+            {\normalsize #2} & {\footnotesize #5}\\
         \end{tabular*}
     }
     {
         \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
             {\large #3} & {\large #4}\\[0.2em]
-            {\normalsize\itshape #2} & {\footnotesize #5}\\[0.2em]
+            {\normalsize #2} & {\footnotesize #5}\\[0.2em]
             \multicolumn{2}{p{\textwidth}}{\normalsize #6}\\
         \end{tabular*}
     }
