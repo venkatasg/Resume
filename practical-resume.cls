@@ -87,7 +87,7 @@
   \hypersetup{
     breaklinks,
     colorlinks    = true,
-    allcolors     = KaroBlue,
+    allcolors     = AmmaBlue,
     baseurl       = https://,
     pdfborder     = 0 0 0,
     pdfpagemode   = \pdfpagemode,
@@ -110,7 +110,7 @@
 % page numbers in footer if more than 1 page
 \AtEndPreamble{%
   \AtBeginDocument{%
-        \ifthenelse{\pageref{LastPage}>1}{\cfoot{\sansc page \thepage\ of \pageref{LastPage}}}{}
+        \cfoot{\sansc page \thepage\ of \pageref{LastPage}}
       }
     }
 \pagestyle{plain}
@@ -201,7 +201,7 @@
 
 \RequirePackage{xcolor}
 \definecolor{MokaRed}{HTML}{D73A49} % my red
-\definecolor{KaroBlue}{HTML}{0366D6} % my blue
+\definecolor{AmmaBlue}{HTML}{0366D6} % my blue
 
 %===============================================================================
 %================================ new commands =================================
@@ -405,14 +405,28 @@
 %===============================================================================
 %=============================== bibliography ==================================
 
-\RequirePackage[style=practical,
+\RequirePackage[style=authoryear,
                 backend=biber,
                 sorting=none,
                 maxbibnames=6,
                 minbibnames=4,
                 uniquename=false,
-                giveninits]{biblatex}
+                giveninits,
+                url=false,
+                doi=false]{biblatex}
 
+\renewcommand*{\mkbibnamegiven}[1]{%
+    \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}
+}
+                                
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}
+}
+    
 % Set separation between bib entries
 \setlength\bibitemsep{1em}
 
