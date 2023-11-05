@@ -49,7 +49,7 @@
 
 % Page margins
 \RequirePackage{geometry}
-\geometry{top=1in, bottom=1.2in, left=1.25in, right=1.25in}
+\geometry{top=0.75in, bottom=1in, left=1.25in, right=1.25in}
 
 %===============================================================================
 %==================================== base =====================================
@@ -408,8 +408,8 @@
 \RequirePackage[style=authoryear,
                 backend=biber,
                 sorting=none,
-                maxbibnames=6,
-                minbibnames=4,
+                maxbibnames=1,
+                minbibnames=1,
                 uniquename=false,
                 giveninits,
                 url=false,
