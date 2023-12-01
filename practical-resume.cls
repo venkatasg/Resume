@@ -143,10 +143,18 @@
 
 %===============================================================================
 %================================= typography ==================================
-
+% 
 \RequirePackage{unicode-math}
-\setmainfont{Equity A}[Numbers={Lowercase,Proportional}, Contextuals=Alternate, SmallCapsFeatures={LetterSpace=3, Renderer=Basic}]
-\setsansfont{Concourse 3}[Numbers={Lowercase,Proportional}, Contextuals=Alternate, SmallCapsFeatures={LetterSpace=3, Renderer=Basic}]
+\setmainfont{Equity A}[
+    Numbers={Lowercase,Proportional}, 
+    Contextuals=Alternate,
+    WordSpace=1.1
+    ]
+\setsansfont{Concourse 3}[
+    Numbers={Lowercase,Proportional}, 
+    Contextuals=Alternate,
+    WordSpace=1.1
+    ]
 
 \newfontfamily{\sansc}{Concourse 3 Caps}[Letters=UppercaseSmallCaps, Numbers={Lowercase,Proportional}]
 \newfontfamily{\rmsc}{Equity A Caps}[Letters=UppercaseSmallCaps, Numbers={Lowercase,Proportional}]
@@ -405,13 +413,14 @@
 %===============================================================================
 %=============================== bibliography ==================================
 
-\RequirePackage[style=authoryear,
-                backend=biber,
+\RequirePackage[backend=biber,
+                citestyle=numeric,
+                bibstyle=authoryear,
+                natbib=true,
+                maxcitenames=1,
+                maxbibnames=999,
                 sorting=none,
-                maxbibnames=1,
-                minbibnames=1,
-                uniquename=false,
-                giveninits,
+                defernumbers=true,
                 url=false,
                 doi=false]{biblatex}
 
@@ -432,5 +441,14 @@
 
 % Print all entries in bib file without explicit cite command
 \AtEndPreamble{
+    \DeclareSourcemap{
+      \maps[datatype=bibtex]{
+        \map{
+         \step[fieldset=author, null]
+       }
+     }
+    }
+    \DeclareFieldFormat{labelnumber}{#1\adddot\addspace}
+    \AtEveryBibitem{\printfield{labelnumber}}
     \nocite{*}
 }
