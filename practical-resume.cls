@@ -90,7 +90,7 @@
 % page numbers in footer if more than 1 page
 \AtEndPreamble{%
   \AtBeginDocument{%
-        \cfoot{\sansclight page \thepage\ of \pageref{LastPage}}
+        \cfoot{\sansc page \thepage\ of \pageref{LastPage}}
       }
     }
 \pagestyle{plain}
@@ -138,8 +138,7 @@
     WordSpace=1.08
     ]{Concourse 3}
 
-\newfontfamily{\sansc}{Concourse 4 Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
-\newfontfamily{\sansclight}{Concourse 3 Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
+\newfontfamily{\sansc}{Concourse 3 Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
 \newfontfamily{\rmsc}{Equity A Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
 
 % Oldstyle tabular numbers inside tabular environment
@@ -241,7 +240,7 @@
 
 % fonts
 \renewcommand*{\namefont}{\Huge\sffamily}
-\renewcommand*{\titlefont}{\sansclight}
+\renewcommand*{\titlefont}{\sansc}
 \renewcommand*{\socialsfont}{\small\sffamily}
 
 % styles
@@ -297,7 +296,7 @@
 
 % fonts
 \renewcommand*{\sectionfont}{%
-  \sansc
+  \sansc\bfseries
 }
 
 \renewcommand*{\subsectionfont}{%
